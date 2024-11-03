@@ -1,0 +1,1302 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+img {
+	max-width: 100%;
+}
+
+p {
+	margin: 0;
+	font-family: 'Swiss';
+}
+
+article {
+	flex:none;
+}
+
+body {
+	background-color: var(--color-background);
+	color: var(--color-grey);
+}
+
+main button {
+	display:flex;
+	border-radius:2.5em;
+	border-color: var(--color-grey);
+	background-color:var(--color-none);
+	color: var(--color-grey);
+
+	padding: 0.5em 2.5em 0.5em 2.5em;
+}
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	--color-background:white;
+	--color-creme:#F1F0ED;
+	--color-grey:#67645E;
+	--color-nav:#67645E;
+	--color-svg:#67645E;
+	--color-section-twee:#67645E;
+	--color-footer:#67645E;
+	--color-lightgrey:#D0D1D0;
+	--color-white:white;
+	--color-white-eenmalig:white;
+	--color-green:#4f6a46;
+	--color-none:transparent;
+
+}
+
+.darkthema {
+	--color-creme:#67645E;
+	--color-grey:#F1F0ED;
+	--color-background:#D3D3D3;
+}
+
+/********************/
+	/* ALLE @'S FONTS */
+/********************/
+
+@font-face {
+	font-family: "Swiss";
+	src: url('//www.rhodeskin.com/cdn/shop/t/827/assets/195b0c1b-165f-4bd1-b23f-cbb6a9a3aa24.woff2?v=83533615405617532041725654277') format("woff2");
+  }
+  @font-face {
+	font-family: "Swiss";
+	src: url('//www.rhodeskin.com/cdn/shop/t/827/assets/60a6c625-19b1-4df2-8635-49ba40161273.woff2?v=102607975385634896091725654277') format("woff2");
+	font-weight: bold;
+  }
+  @font-face {
+	font-family: "Rektorat Heavy";
+	src: url('//www.rhodeskin.com/cdn/shop/t/827/assets/NNRektoratWeb-Heavy.woff2?v=64959517310183983311725654277') format("woff2");
+  }
+
+
+/****************/
+/* KEYFRAMES */
+/****************/
+
+/* Bronnen: (ChatGPT.nl) --> Kleine vragen aan ChatGPT */
+@keyframes moveHorizontally {
+    0% {
+        transform: translateX(0%);
+    }
+
+	100% {
+		transform:translateX(-51%);
+	}
+
+}
+
+@keyframes shrink {
+	0% {
+		height:100em;
+		width:25em;
+	}
+	100% {
+		height:20em;
+		width:100%;
+	}
+}
+
+/* jouw code */
+
+/****************/
+/* JOUW STYLING */
+/****************/
+
+/*****************/
+/* Bovenkant Pagina 1 */
+/*****************/
+
+header {
+	font-family:'Swiss';
+}
+
+header h1 {
+	display:flex;
+	position:absolute;
+	top:16.5em;
+	left:1.4em;
+
+	color: var(--color-nav);
+	font-size:1.8em;
+	font-weight:100;
+}
+
+header h2 {
+	display:flex; 
+	justify-content:center;
+
+	background-color: var(--color-creme);
+
+	font-size:0.8em;
+	font-weight:600;
+
+	border-radius:1em;
+
+	padding:1.1em;
+	margin: 1em 0.7em 0.7em 1.4em;
+}
+
+header h3 {
+	font-family:'Swiss';
+	font-size: 1em;
+	position:absolute;
+	top:28em;
+	left:2.6em;
+}
+
+/* SURFACE PLANE DARK/LIGHT MODE */
+/* https://youtu.be/9LZGB3OLXNQ?si=guN0tfSwYKVqzxP6 + eerder gemaakte javascript van samen.js de buttons. (Youtube, dark light mode) */
+
+.darkmode {
+	display:flex;
+	margin: 3em 0em 2em 2em;
+}
+
+.lightmode {
+	margin: 3em 0em 2em 2em;
+}
+
+.verbergen {
+	display:none;
+}
+
+/* SURFACE PLANE VIDEO */
+/* Bronnen video: https://youtu.be/350_XyLj4-U?si=W3QbCTCVjxw6Njba (Youtube, video autoplay), https://www.rhodeskin.com (Rhode, 2024) */
+
+.videocontainer {
+	display:flex;
+	position:relative;
+	width:100%;
+	height:19em;
+	overflow:hidden;
+	margin-top:5em;
+	margin-bottom:3em;
+	
+	animation: shrink 2.5s ease-in-out;
+}
+
+.verschilhoogtevideo {
+	width:100%;
+	height:100%;
+	object-fit:cover;
+}
+
+/*****************/
+	/* NAV */
+/*****************/
+
+/* Bronnen: https://dlo.mijnhva.nl/content/enforced/609314-FDMCI-2000FED121-DMCI-CMD-2425/FED%2024-25%20-%20Blok%201%20-%20Oefening%20JS%203-stap.pdf (dlo, oefening JS), (ChatGPT.nl) */
+
+
+nav svg {
+	position:absolute;
+	fill: var(--color-svg);
+	top:5.5em;
+}
+
+nav svg:first-of-type {
+	left:2em;
+}
+
+nav svg:nth-of-type(2) {
+	left:10em;
+}
+
+nav svg:nth-of-type(3) {
+	max-width:1em;
+	left:21em;
+}
+
+nav svg:nth-of-type(4) {
+	max-width:1.15em;
+	left:24em;
+}
+
+.navigatie1 {
+	visibility:visible;
+	
+}
+.navigatie2 {
+	display:none;
+  	visibility: hidden;
+	position:fixed;
+
+	margin:1em 0em 0em 0.2em ;
+
+	width:95%;
+	height:100%;
+
+	background-color: var(--color-creme);
+
+	border-top-left-radius: 1.2em;
+	border-top-right-radius: 1.2em;
+
+	z-index:1;
+}
+
+.navigatie2.toonMenu {
+	display:flex;
+	visibility:visible;
+}
+
+.navigatie2 ul {
+    display:flex;
+	position:fixed; 
+    padding:0em;
+    list-style-type: none;
+	
+    font-family: 'Swiss';
+    font-weight: bold; 
+}
+
+.navigatie2 ul li {
+	padding:1em;
+    color: var(--color-nav);
+}
+
+.navigatie2 ul:first-of-type li {
+	color:var(--color-lightgrey);
+}
+
+.navigatie2 ul:first-of-type li:first-of-type {
+	color: var(--color-grey);
+	text-decoration: underline;
+}
+
+.navigatie2 ul:nth-of-type(2) {
+	flex-direction:column;
+
+	width:25em;
+
+	margin:5em 0em 7em 1em;
+	padding:2em 2em 0em 7em;
+
+	font-size: 0.9em;
+}
+
+.navigatie2 ul:nth-of-type(2) li {
+	background-color: var(--color-white);
+	border-radius:1.2em;
+
+	font-size:0.9em;
+
+	margin:0em -4em 1em -8em;
+	padding: 1em 0em 5em 10em;	
+}
+
+.navigatie2 ul:nth-of-type(3) li {
+	display:block;
+
+	width:25%;
+	height:auto;
+	margin-top:-0.2em;
+}
+
+.navigatie2 ul:nth-of-type(3) {
+	flex-direction:column;
+	margin:6.5em 0em 0em 1em;
+}
+
+.navigatie2 ul:nth-of-type(4) li {
+	font-weight:100;
+	font-size:0.9em;
+	font-family:'Swiss';
+
+	margin-top:4em;
+}
+
+.navigatie2 ul:nth-of-type(4) {
+	flex-direction:column;
+
+	margin:4em 0em 0em 7.9em;
+}
+
+.navigatie2 svg {
+	display:flex;
+	position:fixed;
+	top:6.5em;
+}
+
+.navigatie2 svg:first-of-type {
+	left:2em;
+}
+
+.navigatie2 svg:nth-of-type(2) {
+	left:10em;
+}
+
+.navigatie2 svg:nth-of-type(3) {
+	max-width:1em;
+	
+	left:20em;
+}
+
+.navigatie2 svg:nth-of-type(4){
+	max-width:1.15em;
+
+	left:23em;
+}
+
+.button {
+ 	background-color:var(--color-none);
+  	border-color:var(--color-none);
+
+	padding:1em;
+}
+
+.button1 {
+	position:absolute;
+	margin:1em 0em 0em 1.5em;
+	z-index:1;
+}
+
+.button2 {
+	margin:1em 0em 0em 1.5em;
+}
+
+.switchpagina {
+	display:flex;
+
+	margin:40em 0em 0em 9em;
+	text-decoration:none;
+
+	font-weight:bold;
+	font-family:'Swiss';
+	color: var(--color-grey);
+}
+
+
+/*****************/
+/* PAGINA 1*/
+/*****************/
+
+/* Scale (section2) */
+/* Bronnen:https://developer.mozilla.org/en-US/docs/Web/CSS/transform ,(MDN, transform:scale()) */
+
+/* SURFACE PLANE UITZOOMEN AUTOMATISCH */
+/* https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API (MDN, intersection observer) */
+
+.zoom {
+	overflow: hidden;
+	margin-top:0em;
+	margin-left:0em;
+	width:100%;
+
+	border-radius: 1.2em 1.2em 0em 0em;
+}
+
+section:nth-of-type(2) {
+	display:flex;
+	
+	overflow-x:scroll;
+	scroll-snap-type:x mandatory ;
+
+	color: var(--color-section-twee);
+}
+
+section:nth-of-type(2) article {
+	height:27.5em;
+	width:20.5em;
+
+	margin:1em 1em 0em 0em;
+	padding:0em 0em 2em 2em;
+
+	scroll-snap-align:center;
+}
+
+section:nth-of-type(2) h2{
+	font-size:2.5em;
+	font-family:'Rektorat Heavy';
+
+	position:relative;
+	bottom:10.2em;
+}
+
+section:nth-of-type(2) p {
+	font-size:0.9em;
+
+	padding-bottom:0.5em;
+
+	position:relative;
+	bottom:13em;
+}
+
+section:nth-of-type(2) p:nth-of-type(2) {
+	font-weight:bold;
+}
+
+section:nth-of-type(2) p:last-of-type {
+	font-weight:bold;
+	
+	left:17em;
+	top:-16.5em;
+}
+
+section:nth-of-type(2) img{
+	margin:2em 1em 0em 0em;
+	border-radius:1.2em;
+
+	transform:scale(1.1, 1.3);
+}
+
+section:nth-of-type(3) {
+	display:flex;
+	flex-direction:column;
+
+	background-color: var(--color-creme);
+	font-family:'Swiss';
+
+	margin:2em 0em 0em 0.5em;
+
+	border-radius:1.2em;
+}
+
+section:nth-of-type(3) h2 {
+	font-size:1.6em;
+	font-weight: bold;
+
+	margin:1em 5em 1em 0.6em;
+}
+
+section:nth-of-type(3) p {
+	text-align:left;
+
+	padding: 0em 0em 6em 1em;
+	margin: 0em 1em 0em 0em;
+}
+
+section:nth-of-type(3) button {
+	margin:-5em 0em 2em 1em;	
+}
+
+section:nth-of-type(4) .tekstimg {
+	position: relative;
+	color: var(--color-white);
+}
+
+section:nth-of-type(4) img {
+	border-radius:1.2em;
+
+	margin: 3em 1em 1em 1.5em;
+
+	width:90%;
+}
+
+section:nth-of-type(4) h2{
+	font-size:1.8em;
+	font-family:'Swiss';
+	font-weight:lighter;
+
+	margin:0.6em 0em 0em 1em;
+}
+
+section:nth-of-type(4) p {
+	font-size:1em;
+	margin:-12em 0em 0em 1.8em;
+}
+
+section:nth-of-type(4) button {
+	margin:1em 0em 0em 2em;
+
+	border-color: var(--color-white);
+	color: var(--color-white);
+}
+
+section:nth-of-type(5) {
+	display: flex;
+	flex-direction:column;
+
+	background-color: var(--color-creme);
+	font-family:'Swiss';
+
+	margin:3em 0em 0em 0.5em;
+
+	border-radius:1.2em;
+}
+
+section:nth-of-type(5) h2{
+	margin-left:0.7em;
+}
+
+section:nth-of-type(5) article p {
+	padding-left:1em;
+}
+
+section:nth-of-type(5) article button {
+	margin:2em 0em 0em 1em;
+}
+
+
+/* SURFACE PLANE CLEANSE SLIDER */
+
+/* Bronnen:https://chatgpt.com/share/66fb85f7-22cc-8000-ba0e-6c18253711e0 (chatGPT, cleanse animatie maken) */
+
+.slider {
+	width:100%;
+	height:3em;
+
+	display:grid;
+	overflow:hidden;
+
+	margin: 2em 0em 1em 0em;
+}
+
+.tweedestapslider {
+	display: flex;
+	gap: 1em;
+	animation: moveHorizontally 12s linear infinite;
+}
+
+.tweedestapslider .item {
+	display: flex;
+	align-items: center;
+}
+
+.tweedestapslider svg {
+	margin:0em 1em 0em 0em;
+}
+
+.tweedestapslider .text {
+	font-family: 'Rektorat Heavy';
+	font-size:2.5em;
+	color:var(--color-grey);
+	margin: 0;
+}
+
+
+section:nth-of-type(6) {
+	display:flex;
+	flex-direction:row;
+
+	background-color: var(--color-creme);
+
+	overflow-x:scroll;
+	scroll-snap-type:x mandatory ;
+
+	margin:2em 0em 0em 0.5em;
+	padding:0em 0em 10em 0em;
+
+	border-radius:1.2em;
+}
+
+section:nth-of-type(6) p {
+	font-size:1em;
+
+	margin:2em 0em 0em 1em;
+}
+
+section:nth-of-type(6) img {
+	margin:0em 0em 0em 1em;
+
+	scroll-snap-align:center;
+	
+	width:70vw;
+	
+	border-radius:1.2em;
+	margin-top:4em; 
+}
+
+section:nth-of-type(6)  h2{
+	position:absolute;
+
+	font-size: 1.4em;
+	font-family:'Swiss';
+
+	margin-left:0.6em;
+}
+
+section:nth-of-type(6) article:nth-child(3) img{
+	width:62vw;
+}
+
+section:nth-of-type(6) button {
+	position:absolute;
+	margin:36em 0em 0em 7em;
+}
+
+section:nth-of-type(7) {
+	display:flex;
+	flex-direction:column;
+
+	background-color: var(--color-creme);
+
+	margin:2em 0em 0em 0.5em;
+	padding-bottom:2em;
+
+	border-radius:1.2em;
+}
+
+section:nth-of-type(7) p:first-of-type {
+	margin-bottom:4em;
+	font-size:1.7em;
+}
+
+section:nth-of-type(7) p {
+	font-family:'Swiss';
+	font-weight:lighter;
+	font-size:1.3em;
+
+	padding:0.5em 0em 0em 0.5em;
+	margin:0.3em 0em 0em 0.3em;
+}
+
+section:nth-of-type(7) article hr {
+	width:23em;
+	display:flex;
+	margin-top:2em;
+}
+
+section:nth-of-type(7) button {
+	position:absolute;
+	margin:48em 0em 0em 2em;
+}
+
+section:nth-of-type(8) {
+	padding:1em 0em 14em 0em;
+}
+
+section:nth-of-type(8) button {
+	margin-top:1em;
+	margin-left:10em;
+}
+
+section:nth-of-type(8) .tekstimg {
+		position: relative;
+}
+
+section:nth-of-type(8) h2 {
+	font-size:1.3em;
+	font-family:'Swiss';
+	font-weight:lighter;
+
+	text-align: center;
+
+	margin:-14em 0em 0em 0em;
+}
+
+
+/*****************/
+/* PAGINA 2 */
+/*****************/
+
+
+section:first-of-type {
+	display:flex;
+
+	overflow-x:scroll;
+	scroll-snap-type:x mandatory ;
+}
+
+section:first-of-type video {
+	width:100vw;
+	scroll-snap-align:center;
+}
+
+section:first-of-type article img {
+	height:130vw;
+	scroll-snap-align:center;
+	margin:-2em 0em 0em 0.3em;
+}
+
+section:first-of-type article:first-of-type img {
+	width:90vw;
+}
+
+.lipcaseuitlegsection {
+	display:flex;
+
+	background-color: var(--color-creme);
+
+	margin:-2em 0em 0em 0.3em;
+	padding-bottom:22em;
+
+	border-bottom-left-radius: 1.2em;
+	border-bottom-right-radius: 1.2em;
+	
+}
+
+.lipcaseuitlegsection  h1 {
+	font-size:2.5em;
+	font-family:'Rektorat Heavy';
+
+	margin:1em 0em 0em -0.4em;
+}
+
+.lipcaseuitlegsection article h2 {
+	font-family:'Swiss';
+	font-size:0.9em;
+
+	margin:12em 0em 0em -1em;
+}
+
+.lipcaseuitlegsection article p {
+	font-size:0.9em;
+	margin:1.5em 0em 0em -1em;
+}
+
+.lipcaseuitlegsection article p:first-of-type {
+	margin:4em 0em 0em -1em;
+}
+
+.lipcaseuitlegsection article p:nth-of-type(2) {
+	margin:-3.9em -3em 0em -1em;
+	font-weight:lighter;
+}
+
+.lipcaseuitlegsection article p:nth-of-type(6) {
+	margin-top:5em;
+}
+
+.lipcaseuitlegsection article p:nth-of-type(7) {
+	margin-top:-1.6em;
+	margin-left:12.4em;
+
+	font-weight:bold;
+}
+
+.lipcaseuitlegsection article p:nth-of-type(8){
+	margin:1.8em 0em 0em -1.8em;
+	font-weight:lighter;
+}
+
+.lipcaseuitlegsection article:first-of-type button {
+	background-color: var(--color-white);
+
+	width:90vw;
+
+	position:relative;
+	justify-content: center;
+
+	margin:-14em 0em 15em -1.5em;
+	padding:1.3em 0em 1.3em 0em;
+}
+
+.lipcaseuitlegsection ul {
+	display:flex;
+	flex-direction:column;
+	list-style-type: none;
+
+	margin:-13em 0em 1em -3em;
+}
+
+.lipcaseuitlegsection li {
+	margin-bottom:2em;
+
+	font-size:0.9em;
+	font-weight:bold;
+	font-family:'Swiss';
+}
+
+.lipcaseuitlegsection hr {
+	width:23em;
+	margin-top:-4.3em;
+}
+
+
+.lipcaseuitlegsection select {
+	display:flex;
+	border-color:var(--color-none);
+	background-color:var(--color-none);
+	text-decoration: underline;
+	position:relative;
+	font-weight:bold;
+	color:var(--color-grey);
+}
+
+.dropdown {
+	padding-left:2em;
+	margin-top:0em;
+}
+.dropdown2 {
+	padding-left:3em;
+	margin-top:2em;
+}
+
+summary {
+	font-weight:bold;
+}
+
+details{
+	font-weight:200;
+}
+
+.lossefotosection img {
+	border-radius:1.2em;
+}
+
+.rhode1800 {
+	padding-bottom:5em;
+}
+
+.rhode1800 article:first-of-type img {
+	background-color: var(--color-creme);
+
+	width:98%;
+	margin-left:0em;
+	padding-bottom:30em;
+}
+
+.rhode1800 article:first-of-type p {
+	font-size:1.7em;
+
+	margin:-17em 0em 0em 1em;
+}
+
+.rhode1800 ul li{
+	display:flex;
+
+	font-size:0.9em;
+	font-family:'Swiss';
+
+	list-style-type: none;
+	margin-top:5em;
+
+}
+.rhode1800 ul:first-of-type li {
+	font-weight:bolder;
+}
+
+.rhode1800 ul:first-of-type {
+	margin-top:-3em;
+}
+
+.rhode1800 ul:nth-of-type(2)  {
+	margin-top:-21em;
+	margin-right:1em;
+}
+
+.rhode1800 ul:nth-of-type(3) {
+	margin-top:-21.9em;
+	margin-left:-2em;
+}
+
+.rhode1800 ul:nth-of-type(3) li {
+	margin-top:5.2em;
+}
+
+.rhode1800 hr {
+	width:24em;
+}
+
+/* SURFACE PLANE CLEANSE SLIDER */
+/* Bronnen:https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior (MDN, scroll-behavior) en https://chatgpt.com/share/6724af7c-a3fc-8000-9e28-d19334e0392d 
+  (ChatGPT, 2024) https://chatgpt.com/share/6724af7c-a3fc-8000-9e28-d19334e0392d */
+
+.texttreattint {
+	padding-bottom:2em;
+}
+.texttreattint h2 {
+	font-size:1.1em;
+	text-align: center;
+	margin-top:2em;
+}
+
+.texttreattint img {
+	border-top-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+}
+
+.hidden {
+	visibility:hidden;
+}
+
+.visible {
+	visibility:visible;
+}
+
+#img-2 {
+	position:relative;
+	margin-top:-5.72em;
+}
+
+#img-3 {
+	position:relative;
+	margin-top:-5.73em;
+}
+
+.benedenscrollen img {
+	overflow-y:scroll;
+	scroll-behavior:smooth;
+}
+
+.scrollimg {
+	display: flex;
+	flex-direction:column;
+	
+	align-items: center;
+
+	height: 100%;
+	position:relative;
+  }
+
+.afbeeldingscroll {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	font-size:5em;
+}
+
+.texttreattint .geselecteerd {
+	display: flex;
+	color: var(--color-green);
+}
+
+.texttreattint a {
+	display:flex;
+	flex-direction:column;
+	font-family: 'Rektorat Heavy';
+	font-size:3em;
+	text-decoration:none;
+	text-align:center;
+
+	color: var(--color-grey);
+}
+
+
+.peptideliptint .articlepeptide img {
+	display:flex;
+	width:95vw;
+	margin-top:0em;
+}
+  
+.peptideliptint .articlepeptide h3 {
+	color: var(--color-green);
+	font-family: 'Rektorat Heavy';
+	font-size:2.3em;
+
+	margin:2em 0em 1em 1em;
+}
+
+.peptideliptint .articlepeptide ul li {
+	display:flex;
+	flex-direction:column;
+	
+	list-style-type: none;
+	font-family:'Swiss';
+	font-size:0.8em;
+	margin-left:0em;
+
+}
+
+.peptideliptint .articlepeptide ul:first-of-type li:first-of-type {
+	font-weight:bold;
+	margin:-1em 0em 4em 0em;
+}
+
+.peptideliptint .articlepeptide ul:nth-of-type(2) {
+	margin-top:-18em;
+}
+.peptideliptint .articlepeptide ul:nth-of-type(2) li{
+	font-weight:bold;
+}
+
+.peptideliptint .articlepeptide li {
+	margin-bottom:4em;
+}
+
+.peptideliptint .articlepeptide ul:nth-of-type(3) {
+	margin:-19em 5em 0em 0em;
+}
+
+.peptideliptint .articlepeptide ul:nth-of-type(3) li {
+	margin-bottom:2.5em;
+}
+
+.peptideliptint .articlepeptide hr {
+	display:flex;
+	width:25em;
+	margin-top: 2em;
+}
+
+.faq .articlefaq p:first-of-type {
+	font-size:1.7em;
+	font-weight:100;
+	margin-left:0.2em;
+}
+
+.faq .articlefaq p:nth-of-type(2){
+	font-weight:100;
+	margin-top:-7em;
+}
+.faq .articlefaq p{
+	font-family:'Swiss';
+	font-size:0.9em;
+	font-weight:bold;
+
+	margin:1em 2em 0em 1em;
+}
+
+.imgtweecases img{
+	width:100%;
+
+	border-radius:1.2em;
+
+}
+.reviews {
+	background-color: var(--color-creme);
+	margin-top:-13em;
+	padding-bottom:2em;
+	
+	border-radius:1.2em;
+
+	font-family: 'Swiss';
+}
+
+.reviews ul {
+	display:flex;
+	flex-direction:column;
+
+	list-style-type: none;
+}
+
+.reviews p:first-of-type, .reviews p:nth-of-type(2), .reviews p:nth-of-type(3){
+	margin:-2em 0em 0em 1em;
+	padding-top:3em;
+	font-weight:bold;
+}
+
+.reviews p:nth-of-type(4) {
+	margin:-26.5em 0em 0em 18em;
+}
+
+.reviews p:nth-of-type(5) {
+	margin:26em 0em 0em 17em;
+}
+
+.reviews p:nth-of-type(6) {
+	margin:-20.5em 0em 0em 18em;
+}
+
+.reviews p:nth-of-type(7) {
+	margin:20em 0em 0em 16em;
+}
+
+.reviews li {
+	margin:1em 2em 0em -1em;
+}
+
+.reviews ul:first-of-type li:first-of-type,.reviews ul:first-of-type :nth-of-type(3), .reviews ul:first-of-type li:nth-of-type(5), .reviews ul:first-of-type li:nth-of-type(7) {
+	font-weight:bold;
+}
+
+.reviews ul:nth-of-type(2) li:first-of-type, .reviews ul:nth-of-type(2) li:nth-of-type(3), .reviews ul:nth-of-type(2) li:nth-of-type(5), .reviews ul:nth-of-type(2) li:nth-of-type(7) {
+	font-weight:bold;
+}
+
+.reviews button:first-of-type {
+	margin-left:2em;
+	margin-top:2em;
+}
+
+.reviews button:nth-of-type(2) {
+	margin-top:-2.5em;
+	margin-left:16em;
+}
+
+
+.reviews button:nth-of-type(3) {
+	margin:2em 0em 0em 8em;
+
+	padding:0.8em;
+	width:50vw;
+	justify-content:center;
+}
+
+.scrollitems {
+	display:flex;
+
+	padding-bottom:2em;
+	
+	overflow-x:scroll;
+	scroll-snap-type:x mandatory ;
+}
+
+.scrollitems article {
+	height:27.5em;
+	width:20.5em;
+
+	margin:2em 1em 0em 0em;
+
+	padding-left:2em;
+
+	scroll-snap-align:center;
+}
+
+.scrollitems p {
+	position:relative;
+	padding-bottom:0.5em;
+
+	bottom:13em;
+
+	font-size:0.9em;
+}
+
+.scrollitems p:nth-of-type(2) {
+	font-weight:bold;
+}
+
+.scrollitems p:nth-of-type(4) {
+	font-weight:bold;
+	position:relative;
+	left:16em;
+	bottom:17em;
+}
+
+.scrollitems h2 {
+	position:relative;
+	font-size:2.5em;
+	font-family:'Rektorat Heavy';
+
+	bottom:10.2em;
+}
+
+.scrollitems article img {
+	display:flex;
+	flex-direction:column;
+
+	margin:3em 1em 0em 0em;
+
+	border-radius:1.2em;
+
+	transform:scale(1.1, 1.3);
+}
+
+
+/*****************/
+/* FOOTER */
+/*****************/
+
+
+footer{
+	display:flex;
+	flex-direction:column;
+
+	background-color: var(--color-creme);
+	font-family:'Swiss';
+
+	border-radius:1.2em;
+
+	margin-left:0.5em;
+	padding:0em 0em 2em 2em;	
+}
+
+footer svg:first-of-type{
+	width:95%;
+	padding-top:1em;
+}
+
+footer p {
+	display:flex;
+	font-size:0.9em;
+
+	margin:0.8em 0em 0em -0.5em;
+}
+
+footer button {
+	display:block;
+
+	border-radius:1em;
+
+	padding:1.2em;
+	border-color: var(--color-grey);
+	color: var(--color-grey);
+}
+
+footer button:first-of-type {
+	margin:3em 0em 0em -1em;
+	width:60%;
+
+	color: var(--color-footer);
+}
+
+footer button:nth-of-type(2) {
+	margin:-3.9em 0em 0em 15.8em;
+	width:30%;
+
+	color: var(--color-footer);
+}
+
+footer li {
+	list-style-type: none;
+	font-size:0.9em;
+	padding-bottom:0.5em;
+}
+
+footer article:first-of-type ul li {
+	margin-left:-3em;
+	padding-top:1em;
+}
+
+footer article:nth-of-type(2) li {
+	padding:1em;
+}
+
+footer article:nth-of-type(2) ul:first-of-type {
+	display:flex;
+
+	padding:0.5em;
+
+	flex-direction:row;
+	font-weight:bold;
+}
+
+footer article:nth-of-type(2) ul:first-of-type li {
+	margin:0em 4em 0em -1.4em;
+}
+
+footer article:nth-of-type(2) ul:nth-of-type(2)  {
+	margin-left:-3.5em;
+	margin-top:-1.6em;
+} 
+
+footer article:nth-of-type(2) ul:nth-of-type(3) {
+	margin-top:-15.6em;
+	margin-left:5.5em;
+}
+
+footer article:nth-of-type(2) ul:nth-of-type(4) {
+	margin-left:13em;
+	margin-top:-9.6em;
+}
+
+footer article:nth-of-type(3) li {
+	font-size:0.9em;
+	margin-bottom:1em;
+	margin-left:-3em;
+	
+}
+footer article:nth-child(3) li:first-of-type {
+	font-weight:bold;
+}
+
+footer article:nth-child(3) li:nth-of-type(4) {
+	font-weight: bold;
+	margin-top:-1em;
+}
+
+footer hr {
+	width:25.3em;
+	margin:2em 0em 0em -2em;
+
+	display:flex
+}
+
+footer article:nth-child(3) img {
+	width:37%;
+
+	margin:1em 0em 0em 6em;
+}
+
+footer article:nth-child(4) p {
+	margin-left:8em;
+	font-size:0.9em;
+}
